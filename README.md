@@ -1,10 +1,10 @@
-## Project Description
+# Project Description
 A project that creates an interpreter for Monty ByteCodes files
-# Table of contents
+## Table of contents
 
-# Technologies used
+## Technologies used
 C Langauage
-# Authors' names
+## Authors' names
 Ahmed el saeed
-# Instructions
+## Instructions
 
