@@ -1,16 +1,15 @@
 #include "monty.h"
 /**
-  * _cmp - chcek if instruction is valid
+  * _cmp1 - chcek if instruction is valid
   *
   * @lowered: instruction command passed
   *
   * Return: 1 if true as valid 0 if false as command not valid
   */
-int _cmp(char *lowered)
+int _cmp1(char *lowered)
 {
 	int i;
-	char *dict[11] = {"add", "sub", "push", "swap", "pall",
-		"nop", "pop", "pint", "div", "mul", NULL};
+	char *dict[11] = {"add", "sub", "div", "mul", NULL};
 
 	for (i = 0; dict[i] != NULL; i++)
 	{

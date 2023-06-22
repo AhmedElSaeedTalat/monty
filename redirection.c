@@ -18,7 +18,7 @@ void (*redirect(char *str))(stack_t **stack, unsigned int line_number)
 		{"swap", swap},
 		{"add", add},
 		{"sub", sub},
-		{"dv", dv},
+		{"div", dv},
 		{"mul", mul},
 		{"nop", nop},
 		{NULL, NULL}

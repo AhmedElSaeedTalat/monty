@@ -22,7 +22,7 @@ void check_addError(FILE *f, stack_t **stack, int line_number, char *lowered)
 			write(STDERR_FILENO, ": can't add, stack too short\n", 29);
 		else if (strcmp(lowered, "sub") == 0)
 			write(STDERR_FILENO, ": can't sub, stack too short\n", 29);
-		else if (strcmp(lowered, "dv") == 0)
+		else if (strcmp(lowered, "div") == 0)
 			write(STDERR_FILENO, ": can't div, stack too short\n", 29);
 		else if (strcmp(lowered, "mul") == 0)
 			write(STDERR_FILENO, ": can't mul, stack too short\n", 29);
@@ -30,7 +30,7 @@ void check_addError(FILE *f, stack_t **stack, int line_number, char *lowered)
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-	if ((*stack)->n == 0 && strcmp(lowered, "dv") == 0)
+	if ((*stack)->n == 0 && strcmp(lowered, "div") == 0)
 	{
 		sprintf(str, "%d", line_number);
 		write(STDERR_FILENO, "L", 1);
