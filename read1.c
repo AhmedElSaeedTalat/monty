@@ -86,7 +86,7 @@ void inst(stack_t **stack, char *token, unsigned int counter, FILE *f)
 		} else if (_cmp(lowered))
 		{
 			if (strcmp(lowered, "add") == 0 || strcmp(lowered, "sub") == 0 ||
-					strcmp(lowered, "dv") == 0)
+					strcmp(lowered, "dv") == 0 || strcmp(lowered, "mul") == 0 )
 				check_addError(f, stack, counter, lowered);
 			if (strcmp(lowered, "pop") == 0)
 				pop_error(*stack, f, counter);

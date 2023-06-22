@@ -19,6 +19,7 @@ void (*redirect(char *str))(stack_t **stack, unsigned int line_number)
 		{"add", add},
 		{"sub", sub},
 		{"dv", dv},
+		{"mul", mul},
 		{"nop", nop},
 		{NULL, NULL}
 	};
