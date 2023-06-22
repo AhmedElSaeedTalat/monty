@@ -60,11 +60,13 @@ void error_instruction(char *instruction, int line_number)
 void inst(stack_t **stack, char *token, unsigned int counter, FILE *f)
 {
 	void (*redirecting)(stack_t **stack, unsigned int line_number);
-	int y, value = 0, valid_instruction = 0;
+	int y, local_counter = 0, value = 0, valid_instruction = 0;
 	char lowered[BUFSIZ], *delim = " \n";
 
 	while (token != NULL)
 	{
+		if (strcmp(token, "#") == 0 && local_counter == 0)
+			break;
 		strcpy(lowered, token);
 		for (y = 0; lowered[y] != '\0'; y++)
 			lowered[y] = tolower(lowered[y]);
@@ -93,6 +95,7 @@ void inst(stack_t **stack, char *token, unsigned int counter, FILE *f)
 		token = strtok(NULL, delim);
 		if (token == NULL && valid_instruction == 0)
 			error_instruction(lowered, counter);
+		local_counter++;
 	}
 }
 /**
