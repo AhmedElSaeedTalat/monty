@@ -9,8 +9,8 @@
 int _cmp(char *lowered)
 {
 	int i;
-	char *dict[11] = {"add", "sub", "push", "swap", "pall",
-		"nop", "pop", "pint", "div", "mul", NULL};
+	char *dict[12] = {"add", "sub", "push", "swap", "pall",
+		"nop", "pop", "pint", "div", "mul", "mod", NULL};
 
 	for (i = 0; dict[i] != NULL; i++)
 	{

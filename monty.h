@@ -57,4 +57,5 @@ int _cmp1(char *lowered);
 void sub(stack_t **stack, unsigned int line_number);
 void dv(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
 #endif
