@@ -54,4 +54,5 @@ void check_addError(FILE *f, stack_t **stack, int line_number, char *lowered);
 void pop_error(stack_t *stack, FILE *f, int line_number);
 int _cmp(char *lowered);
 void sub(stack_t **stack, unsigned int line_number);
+void dv(stack_t **stack, unsigned int line_number);
 #endif
