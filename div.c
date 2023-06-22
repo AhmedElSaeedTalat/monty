@@ -13,7 +13,7 @@ void dv(stack_t **stack, unsigned int line_number)
 	(void) line_number;
 	ptr = *stack;
 	next1 = (*stack)->next;
-	res = next1->n / (*stack)->n;
+	res = (*stack)->n / next1->n;
 	next1->n = res;
 	next1->prev = NULL;
 	*stack = next1;
