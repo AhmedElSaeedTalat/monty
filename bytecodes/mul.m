@@ -1,5 +1,5 @@
-push 5
+push 0
 push 5
 pall
-add
+div
 pall
