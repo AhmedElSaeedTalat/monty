@@ -7,8 +7,9 @@
   * @f: file opened to close
   *
   * @line_number: line number where error occurs
+  * @lowered: pointer passed
   */
-void check_addError(FILE *f, stack_t **stack, int line_number)
+void check_addError(FILE *f, stack_t **stack, int line_number, char *lowered)
 {
 	char str[1050];
 
@@ -17,7 +18,10 @@ void check_addError(FILE *f, stack_t **stack, int line_number)
 		sprintf(str, "%d", line_number);
 		write(STDERR_FILENO, "L", 1);
 		write(STDERR_FILENO, str, strlen(str));
-		write(STDERR_FILENO, ": can't add, stack too short\n", 29);
+		if (strcmp(lowered, "add") == 0)
+			write(STDERR_FILENO, ": can't add, stack too short\n", 29);
+		else if (strcmp(lowered, "sub") == 0)
+			write(STDERR_FILENO, ": can't sub, stack too short\n", 29);
 		fclose(f);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);

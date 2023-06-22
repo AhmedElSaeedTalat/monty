@@ -83,12 +83,10 @@ void inst(stack_t **stack, char *token, unsigned int counter, FILE *f)
 				push_value = -1, redirecting = redirect("push");
 				redirecting(stack, counter);
 			}
-		} else if (strcmp(lowered, "pall") == 0 || strcmp(lowered, "swap") == 0 ||
-				strcmp(lowered, "pint") == 0 || strcmp(lowered, "pop") == 0 ||
-				strcmp(lowered, "add") == 0  || strcmp(lowered, "nop") == 0)
+		} else if (_cmp(lowered))
 		{
-			if (strcmp(lowered, "add") == 0)
-				check_addError(f, stack, counter);
+			if (strcmp(lowered, "add") == 0 || strcmp(lowered, "sub") == 0)
+				check_addError(f, stack, counter, lowered);
 			if (strcmp(lowered, "pop") == 0)
 				pop_error(*stack, f, counter);
 			redirecting = redirect(lowered), redirecting(stack, counter);
