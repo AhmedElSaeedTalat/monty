@@ -51,4 +51,5 @@ void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 int check_size(stack_t *stack);
 void check_addError(FILE *f, stack_t **stack, int line_number);
+void pop_error(stack_t *stack, FILE *f, int line_number);
 #endif

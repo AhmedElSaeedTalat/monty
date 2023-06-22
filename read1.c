@@ -89,6 +89,8 @@ void inst(stack_t **stack, char *token, unsigned int counter, FILE *f)
 		{
 			if (strcmp(lowered, "add") == 0)
 				check_addError(f, stack, counter);
+			if (strcmp(lowered, "pop") == 0)
+				pop_error(*stack, f, counter);
 			redirecting = redirect(lowered), redirecting(stack, counter);
 			token = strtok(NULL, delim), valid_instruction = 1;
 			continue;
