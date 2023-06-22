@@ -65,7 +65,7 @@ void inst(stack_t **stack, char *token, unsigned int counter, FILE *f)
 
 	while (token != NULL)
 	{
-		if (strcmp(token, "#") == 0 && local_counter == 0)
+		if ((strcmp(token, "#") == 0 || token[0] == '#') && local_counter == 0)
 			break;
 		strcpy(lowered, token);
 		for (y = 0; lowered[y] != '\0'; y++)
