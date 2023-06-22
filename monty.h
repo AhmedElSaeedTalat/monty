@@ -58,5 +58,7 @@ void sub(stack_t **stack, unsigned int line_number);
 void dv(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
 void redirect_errors(char *lowered, FILE *f, int counter, stack_t **stack);
+void pchar_error(stack_t *stack, FILE *f, int counter);
 #endif

@@ -22,6 +22,7 @@ void (*redirect(char *str))(stack_t **stack, unsigned int line_number)
 		{"mul", mul},
 		{"mod", mod},
 		{"nop", nop},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 	for (i = 0; inst[i].opcode != NULL; i++)
