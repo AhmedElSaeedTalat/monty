@@ -1,5 +1,4 @@
-push 2
-push 5
-push 1
-add
-pall
+push 65
+push 67
+push 68
+pstr

@@ -9,7 +9,7 @@
 int _cmp(char *lowered)
 {
 	int i;
-	char *dict[13] = {"add", "sub", "push", "swap", "pall",
+	char *dict[14] = {"add", "sub", "push", "swap", "pall", "pstr",
 		"nop", "pop", "pint", "div", "mul", "mod", "pchar", NULL};
 
 	for (i = 0; dict[i] != NULL; i++)
