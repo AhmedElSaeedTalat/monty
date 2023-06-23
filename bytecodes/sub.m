@@ -1,5 +1,1 @@
-push 5
-push 4
-pall
-sub
-pall
+push 98; push 402; sub Holberton; pall
