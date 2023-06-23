@@ -16,7 +16,7 @@ void pop_error(stack_t *stack, FILE *f, int line_number)
 		sprintf(str, "%d", line_number);
 		write(STDERR_FILENO, "L", 1);
 		write(STDERR_FILENO, str, strlen(str));
-		write(STDERR_FILENO, ": can't pop an empty stack\n", 25);
+		write(STDERR_FILENO, ": can't pop an empty stack\n", 27);
 		fclose(f);
 		exit(EXIT_FAILURE);
 	}
