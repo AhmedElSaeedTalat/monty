@@ -26,7 +26,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_stack;
 
-	if (push_value == -1)
+	if (push_value == -900)
 		push_error(*stack, line_number);
 	new_stack = malloc(sizeof(stack_t));
 	if (new_stack == NULL)

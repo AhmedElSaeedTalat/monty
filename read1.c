@@ -82,7 +82,7 @@ void inst(stack_t **stack, char *token, unsigned int counter, FILE *f)
 				continue;
 			} else
 			{
-				push_value = -1, redirecting = redirect("push");
+				push_value = -900, redirecting = redirect("push");
 				redirecting(stack, counter);
 			}
 		} else if (_cmp(lowered))
