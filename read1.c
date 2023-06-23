@@ -61,19 +61,20 @@ void inst(stack_t **stack, char *token, unsigned int counter, FILE *f)
 {
 	void (*redirecting)(stack_t **stack, unsigned int line_number);
 	int y, local_counter = 0, value = 0, valid_instruction = 0;
-	char lowered[BUFSIZ], *delim = " \n";
+	char lowered[BUFSIZ], first_token[BUFSIZ], *delim = " \n";
 
 	while (token != NULL)
 	{
 		if ((strcmp(token, "#") == 0 || token[0] == '#') && local_counter == 0)
 			break;
+		if (local_counter == 0)
+			strcpy(first_token, token);
 		strcpy(lowered, token);
 		for (y = 0; lowered[y] != '\0'; y++)
 			lowered[y] = tolower(lowered[y]);
 		if (strcmp(lowered, "push") == 0)
 		{
-			token = strtok(NULL, delim);
-			value = check_push_value(token, f);
+			token = strtok(NULL, delim), value = check_push_value(token, f);
 			if (value == 1)
 			{
 				push_value = atoi(token), redirecting = redirect("push");
@@ -94,7 +95,7 @@ void inst(stack_t **stack, char *token, unsigned int counter, FILE *f)
 		}
 		token = strtok(NULL, delim);
 		if (token == NULL && valid_instruction == 0)
-			error_instruction(lowered, counter);
+			error_instruction(first_token, counter);
 		local_counter++;
 	}
 }
