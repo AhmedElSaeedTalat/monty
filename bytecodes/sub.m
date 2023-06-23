@@ -1,1 +1,1 @@
-push 98; push 402; sub Holberton; pall
+push 402; push 98; div Holberton; pall
